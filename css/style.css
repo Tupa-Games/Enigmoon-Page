@@ -1,0 +1,29 @@
+#cover-image{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    width: 100%;
+  }
+
+  .container{
+    background-color: black;
+  }
+
+@media only screen and (min-width: 600px)
+{
+    .container{
+        margin-right: 20% !important;
+        margin-left: 20% !important;
+        border-right: 1px solid rgb(4, 142, 255);
+        border-left: 1px solid rgb(4, 142, 255);
+        height: 800px;
+    }
+}

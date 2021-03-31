@@ -1,3 +1,82 @@
-<html>
-	Enigmoon
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Enigmoon game page">
+    <meta name="author" content="luis8.com">
+    <title>Enigmoon</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+    <div class="container">
+      <img src="images/cover.jpg" id="cover-image" class="img-fluid" alt="...">
+
+      <p id="timeRemaining" style="color: white;"></p>
+
+      <button type="button" class="btn btn-outline-info" onclick="clickNewslatter()">Subscribe</button>
+      <br><br>
+      <h3 id="timeRemaining" style="color: white;">Coming soon...</h3>
+
+    </div>
+
+  </body>
+
+
+  <script>
+
+    var countDownDate = new Date("Nov 12, 2021 21:11:12").getTime();
+
+    var tInterval = setInterval(function() {
+
+      var now = new Date().getTime();
+
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("timeRemaining").innerHTML = "Remaining time: " + days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      if (distance < 0) {
+        clearInterval(tInterval);
+        document.getElementById("timeRemaining").innerHTML = "Released";
+      }
+    }, 1000);
+
+    function clickNewslatter()
+    {
+      varWindow = window.open (
+    'https://docs.google.com/forms/d/e/1FAIpQLSe9F37j3wZWolc8uAQqx6ZPIVfYRU2yDAlW2JBzbfuuwZH1wA/viewform?usp=sf_link',
+    'pagina',
+    "width=550, height=650, top=100, left=110, scrollbars=no " );
+    } 
+  </script>
+
 </html>
